@@ -1,0 +1,10 @@
+# Sobe só o front. A API (estoquechef-backend) precisa estar rodando em localhost:8000.
+services:
+  front:
+    build:
+      context: .
+      args:
+        # O navegador (não o container) chama a API, por isso localhost.
+        VITE_API_URL: http://localhost:8000
+    ports:
+      - "5173:80"
